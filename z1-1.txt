@@ -1,0 +1,20 @@
+// Write a simple implementation of a EventEmitter class that when extended can be used to emit events and listen for certain events using the “emit" and “on” methods. For more information check the example bellow:
+// Usage:
+
+// const fs = require('fs');
+// class Reader extends EventEmitter {
+//   constructor(options) {
+//     super();
+//     this.options = options;
+//   }
+//   readFile(fileName) {
+//     fs.readFile(fileName, this.options, (err, content) => {
+//       if (err) { return this.emit('error', err); }
+//       this.emit('data', content);
+//     })
+//   }
+// }
+
+// const reader = new Reader({ encoding: 'utf8' });
+// reader.on('data', console.log);
+// reader.readFile('test.txt');

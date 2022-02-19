@@ -1,0 +1,16 @@
+Write a simple implementation of Iterator class that when extended allows the developer to get an iterator object by calling the getIterator method. The object has one method called next() which when called iterates over the OWN properties of the parent class. For more details check the example bellow:
+
+class User extends Iterator {
+    constructor(name, age) {
+        super();
+        this.name = name;
+        this.age = age;
+    }
+}
+
+const ivan = new User(‘Ivan’, 20);
+const iter = ivan.getIterator();
+console.log(iter.next()); // > will log: { value: { name: ‘Ivan’ }, done: false }
+console.log(iter.next()); // > will log: { value: { age: 20  }, done: false }
+console.log(iter.next()); // > will log: { value: null, done: true }
+console.log(iter.next()); // > will log: { value: null, done: true }
